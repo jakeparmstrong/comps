@@ -1,0 +1,138 @@
+
+use_osc "localhost", 4580
+centre = 0
+count = 0
+use_synth :beep
+unit = 0.125
+
+define :bass do
+  play centre + 56
+  sleep unit * 6
+  play centre + 58
+  sleep unit * 5
+  play centre + 60
+  sleep unit
+  play centre + 61
+  sleep unit * 3
+  play centre + 60
+  sleep unit * 3
+  play centre + 58
+  sleep unit * 3
+  play centre + 56
+  sleep unit * 3
+end
+#hey change centre
+
+live_loop :pattern do
+  pitch =  centre + 92
+  play pitch
+  osc "/v1", pitch, "1"
+  sleep unit
+  pitch =  centre + 87
+  play pitch
+  osc "/v1", pitch, "2"
+  sleep unit
+  pitch =  centre + 82
+  play pitch
+  osc "/v1", pitch, "3"
+  sleep unit
+  pitch =  centre + 77
+  play pitch
+  osc "/v1", pitch, "4"
+  sleep unit
+  pitch =  centre + 72
+  play pitch
+  osc "/v1", pitch, "5"
+  sleep unit
+  pitch =  centre + 67
+  play pitch
+  osc "/v1", pitch, "6"
+  sleep unit
+  print "1|||||||||||||||||"
+  pitch =  centre + 89
+  play pitch
+  osc "/v1", pitch, "1"
+  sleep unit
+  pitch =  centre + 85
+  play pitch
+  osc "/v1", pitch, "2"
+  sleep unit
+  pitch =  centre + 80
+  play pitch
+  osc "/v1", pitch, "3"
+  sleep unit
+  pitch =  centre + 78
+  play pitch
+  osc "/v1", pitch, "4"
+  sleep unit
+  pitch =  centre + 73
+  play pitch
+  osc "/v1", pitch, "5"
+  sleep unit
+  pitch =  centre + 66
+  play pitch
+  osc "/v1", pitch, "6"
+  sleep unit
+  print "2|||||||||||||||||"
+  pitch =  centre + 87
+  play pitch
+  osc "/v1", pitch, "1"
+  sleep unit
+  pitch =  centre + 82
+  play pitch
+  osc "/v1", pitch, "2"
+  sleep unit
+  pitch =  centre + 77
+  play pitch
+  osc "/v1", pitch, "3"
+  sleep unit
+  pitch =  centre + 72
+  play pitch
+  osc "/v1", pitch, "4"
+  sleep unit
+  pitch =  centre + 67
+  play pitch
+  osc "/v1", pitch, "5"
+  sleep unit
+  pitch =  centre + 62
+  play pitch
+  osc "/v1", pitch, "6"
+  sleep unit
+  print "3|||||||||||||||||"
+  pitch =  centre + 85
+  play pitch
+  osc "/v1", pitch, "1"
+  sleep unit
+  pitch =  centre + 80
+  play pitch
+  osc "/v1", pitch, "2"
+  sleep unit
+  pitch =  centre + 78
+  play pitch
+  osc "/v1", pitch, "3"
+  sleep unit
+  pitch =  centre + 73
+  play pitch
+  osc "/v1", pitch, "4"
+  sleep unit
+  pitch =  centre + 66
+  play pitch
+  osc "/v1", pitch, "5"
+  sleep unit
+  pitch =  centre + 61
+  play pitch
+  osc "/v1", pitch, "6"
+  sleep unit
+  print "4|||||||||||||||||"
+  if count < 4
+    centre = centre - 3
+    unit = unit * 0.9
+  end
+  count = count + 1
+  if count > 10
+    centre = centre +1
+  end
+  #  if centre < -10
+  #    centre = centre +12
+  #  end
+end
