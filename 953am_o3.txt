@@ -1,0 +1,400 @@
+use_bpm 118
+
+define :bass_intro do
+  play :Cs2, sustain_level: 1.5
+  play :Cs3, sustain_level: 1.5
+  sleep (0.75)
+  play :E2, release: 3.5, sustain_level: 1.5
+  play :E3, release: 3.5, sustain_level: 1.5
+  sleep 3.25
+  play :e2, sustain_level: 1.5
+  play :e3, sustain_level: 1.5
+  sleep 1
+  play :fs2, sustain_level: 1.5
+  play :fs3, sustain_level: 1.5
+  sleep 1
+  play :cs2, release: 1.75, sustain_level: 1.5
+  play :cs3, release: 1.75, sustain_level: 1.5
+  sleep 1.75
+  play :cs2, release: 0.25
+  sleep 0.25
+  4.times do
+    play :b1, release: 0.5
+    sleep 0.5
+    play :cs2, release: 0.5
+    sleep 0.5
+    play :e2, release: 0.5
+    sleep 0.5
+    play :fs2, release: 0.5
+    sleep 0.5
+    play :cs2, release: 0.25
+    sleep 0.75
+    play :cs2, release: 0.25
+    sleep 1
+    play :cs2, release: 0.25
+    sleep 0.25
+  end
+end
+
+define :bass_verse do
+  16.times do
+    play :b1, release: 0.5
+    sleep 0.5
+    play :cs2, release: 0.5
+    sleep 0.5
+    play :e2, release: 0.5
+    sleep 0.5
+    play :fs2, release: 0.5
+    sleep 0.5
+    play :cs2, release: 0.25
+    sleep 0.75
+    play :cs2, release: 0.25
+    sleep 1
+    play :cs2, release: 0.25
+    sleep 0.25
+  end
+end
+
+define :bass_chorus do
+  7.times do
+    play :b1, release: 0.5
+    sleep 0.5
+    play :cs2, release: 0.5
+    sleep 0.5
+    play :e2, release: 0.5
+    sleep 0.5
+    play :fs2, release: 0.5
+    sleep 0.5
+    play :cs2, release: 0.25
+    sleep 0.75
+    play :cs2, release: 0.25
+    sleep 1
+    play :cs2, release: 0.25
+    sleep 0.25
+  end
+end
+define :bass_chorus_first_ending do
+  play :a1, release: 0.5, amp: 1
+  sleep 1.5
+  play :fs2, release: 0.5, amp: 1
+  sleep 1.5
+  play :b1, release: 0.5, amp: 1
+  sleep 0.75
+  play :cs2, release: 0.25
+  sleep 0.25
+  3.times do
+    play :b1, release: 0.5
+    sleep 0.5
+    play :cs2, release: 0.5
+    sleep 0.5
+    play :e2, release: 0.5
+    sleep 0.5
+    play :fs2, release: 0.5
+    sleep 0.5
+    play :cs2, release: 0.25
+    sleep 0.75
+    play :cs2, release: 0.25
+    sleep 1
+    play :cs2, release: 0.25
+    sleep 0.25
+  end
+end
+define :bass_chorus_second_ending do
+  play :a1, release: 0.5, amp: 1
+  sleep 1.5
+  play :fs2, release: 0.5, amp: 1
+  sleep 1.5
+  play :b1, release: 0.5, amp: 1
+  sleep 1.5
+  play :cs2, release: 0.25, amp: 1
+  sleep 0.25
+  play :b1, release: 0.25, amp: 1
+  sleep 0.5
+  play :b1, release: 0.25, amp: 1
+  sleep 0.25
+  play :cs1, release: 0.25, amp: 1
+  sleep 0.5
+  play :e1, release: 0.25, amp: 1
+  sleep 0.5
+  play :fs1, release: 2.5
+  3.times do
+    play :b1, release: 0.5
+    sleep 0.5
+    play :cs2, release: 0.5
+    sleep 0.5
+    play :e2, release: 0.5
+    sleep 0.5
+    play :fs2, release: 0.5
+    sleep 0.5
+    play :cs2, release: 0.25
+    sleep 0.75
+    play :cs2, release: 0.25
+    sleep 1
+    play :cs2, release: 0.25
+    sleep 0.25
+  end
+end
+
+define :chords_intro do
+  play :Cs6, sustain_level: 1.5
+  play :gs5, sustain_level: 1.5
+  play :e5, sustain_level: 1.5
+  play :cs5, sustain_level: 1.5
+  sleep (0.75)
+  play :B5, release: 3, sustain_level: 1.5
+  play :gs5, release: 3, sustain_level: 1.5
+  play :e5, release: 3, sustain_level: 1.5
+  play :b4, release: 3, sustain_level: 1.5
+  sleep   3.25
+  play :b5, sustain_level: 1.5
+  play :gs5, sustain_level: 1.5
+  play :e5, sustain_level: 1.5
+  play :b4, sustain_level: 1.5
+  sleep   1
+  play :as5, sustain_level: 1.5
+  play :gs5, sustain_level: 1.5
+  play :cs4, sustain_level: 1.5
+  play :as4, sustain_level: 1.5
+  sleep   1
+  play :gs5, release: 2, sustain_level: 1.5
+  play :e5, release: 2, sustain_level: 1.5
+  play :b4, release: 2, sustain_level: 1.5
+  play :gs4, release: 2, sustain_level: 1.5
+  sleep   2
+  play :gs4, attack: 0.5, release: 6, amp: 0.5
+  play :e4, attack: 0.5, release: 6, amp: 0.5
+  play :cs4, attack: 0.5, release: 6, amp: 0.5
+  play :b3, attack: 0.5, release: 6, amp: 0.5
+  sleep   8
+  play :gs4, attack: 0.5, release: 6, amp: 0.5
+  play :e4, attack: 0.5, release: 6, amp: 0.5
+  play :cs4, attack: 0.5, release: 6, amp: 0.5
+  play :b3, attack: 0.5, release: 6, amp: 0.5
+  sleep   8
+end
+
+define :chords_verse do
+  #Fs7
+  play :cs4, attack: 0.5, release: 6, amp: 0.5
+  play :as3, attack: 0.5, release: 6, amp: 0.5
+  play :fs3, attack: 0.5, release: 6, amp: 0.5
+  play :e3, attack: 0.5, release: 6, amp: 0.5
+  sleep   8
+  #Csm7
+  play :e4, attack: 0.5, release: 6, amp: 0.5
+  play :cs4, attack: 0.5, release: 6, amp: 0.5
+  play :b3, attack: 0.5, release: 6, amp: 0.5
+  play :gs3, attack: 0.5, release: 6, amp: 0.5
+  sleep   8
+  #Fs7
+  play :cs4, attack: 0.5, release: 6, amp: 0.5
+  play :as3, attack: 0.5, release: 6, amp: 0.5
+  play :fs3, attack: 0.5, release: 6, amp: 0.5
+  play :e3, attack: 0.5, release: 6, amp: 0.5
+  sleep   8
+  #Csm7
+  play :e4, attack: 0.5, release: 6, amp: 0.5
+  play :cs4, attack: 0.5, release: 6, amp: 0.5
+  play :b3, attack: 0.5, release: 6, amp: 0.5
+  play :gs3, attack: 0.5, release: 6, amp: 0.5
+  sleep   8
+  #Fs7
+  play :cs4, attack: 0.5, release: 6, amp: 0.5
+  play :as3, attack: 0.5, release: 6, amp: 0.5
+  play :fs3, attack: 0.5, release: 6, amp: 0.5
+  play :e3, attack: 0.5, release: 6, amp: 0.5
+  sleep   8
+  #Csm7
+  play :gs4, attack: 0.5, release: 6, amp: 0.5
+  play :e4, attack: 0.5, release: 6, amp: 0.5
+  play :cs4, attack: 0.5, release: 6, amp: 0.5
+  play :b3, attack: 0.5, release: 6, amp: 0.5
+  sleep   8
+  #Fs7
+  play :as4, attack: 0.5, release: 6, amp: 0.5
+  play :fs4, attack: 0.5, release: 6, amp: 0.5
+  play :e4, attack: 0.5, release: 6, amp: 0.5
+  play :cs4, attack: 0.5, release: 6, amp: 0.5
+  sleep   8
+  #Csm7
+  play :gs4, attack: 0.5, release: 2, amp: 0.5
+  play :e4, attack: 0.5, release: 2, amp: 0.5
+  play :cs4, attack: 0.5, release: 2, amp: 0.5
+  play :b3, attack: 0.5, release: 2, amp: 0.5
+  sleep   2
+  #Amaj7
+  play :gs4, attack: 0.5, release: 2, amp: 0.5
+  play :e4, attack: 0.5, release: 2, amp: 0.5
+  play :cs4, attack: 0.5, release: 2, amp: 0.5
+  play :a3, attack: 0.5, release: 2, amp: 0.5
+  sleep   2
+  #Gsm7
+  play :gs4, attack: 0.5, release: 4, amp: 0.5
+  play :fs4, attack: 0.5, release: 4, amp: 0.5
+  play :ds4, attack: 0.5, release: 4, amp: 0.5
+  play :b3, attack: 0.5, release: 4, amp: 0.5
+  sleep   4
+end
+
+define :chords_chorus do
+  
+  #chorus
+  play :Cs5, amp: 0.75
+  play :gs4, amp: 0.75
+  play :e4, amp: 0.75
+  sleep (0.75)
+  play :B4, release: 3, amp: 0.75
+  play :gs4, release: 3, amp: 0.75
+  play :e4, release: 3, amp: 0.75
+  sleep   3.25
+  play :b4, amp: 0.75
+  play :gs4, amp: 0.75
+  play :e4, amp: 0.75
+  sleep   1
+  play :as4, amp: 0.75
+  play :gs4, amp: 0.75
+  play :cs4, amp: 0.75
+  sleep   1
+  play :gs4, release: 2, amp: 0.75
+  play :e4, release: 2, amp: 0.75
+  play :b3, release: 2, amp: 0.75
+  play :gs3, release: 2, amp: 0.75
+  sleep   2
+  #Fs7
+  play :fs4, attack: 0.5, release: 3, amp: 0.5
+  play :e4, attack: 0.5, release: 3, amp: 0.5
+  play :cs4, attack: 0.5, release: 3, amp: 0.5
+  play :as3, attack: 0.5, release: 3, amp: 0.5
+  sleep   4
+  #Fsm7
+  play :fs4, attack: 0.5, release: 3, amp: 0.5
+  play :e4, attack: 0.5, release: 3, amp: 0.5
+  play :cs4, attack: 0.5, release: 3, amp: 0.5
+  play :a3, attack: 0.5, release: 3, amp: 0.5
+  sleep   4
+  play :Cs5, amp: 0.75
+  play :gs4, amp: 0.75
+  play :e4, amp: 0.75
+  sleep (0.75)
+  play :B4, release: 3, amp: 0.75
+  play :gs4, release: 3, amp: 0.75
+  play :e4, release: 3, amp: 0.75
+  sleep   3.25
+  play :b4, amp: 0.75
+  play :gs4, amp: 0.75
+  play :e4, amp: 0.75
+  sleep   1
+  play :as4, amp: 0.75
+  play :gs4, amp: 0.75
+  play :cs4, amp: 0.75
+  sleep   1
+  play :gs4, release: 2, amp: 0.75
+  play :e4, release: 2, amp: 0.75
+  play :b3, release: 2, amp: 0.75
+  play :gs3, release: 2, amp: 0.75
+  sleep   2
+  #Fs7
+  play :fs4, attack: 0.5, release: 3, amp: 0.5
+  play :e4, attack: 0.5, release: 3, amp: 0.5
+  play :cs4, attack: 0.5, release: 3, amp: 0.5
+  play :as3, attack: 0.5, release: 3, amp: 0.5
+  sleep   4
+end
+
+define :chords_chorus_first_ending do
+  play :g5, release: 0.5, amp: 1
+  play :e5, release: 0.5, amp: 1
+  play :cs5, release: 0.5, amp: 1
+  play :g4, release: 0.5, amp: 1
+  sleep  1.5
+  play :e5, release: 0.5, amp: 1
+  play :cs5, release: 0.5, amp: 1
+  play :as4, release: 0.5, amp: 1
+  play :e4, release: 0.5, amp: 1
+  sleep  1.5
+  play :e5, release: 0.5, amp: 1
+  play :cs5, release: 0.5, amp: 1
+  play :a4, release: 0.5, amp: 1
+  play :e4, release: 0.5, amp: 1
+  sleep  1
+  play :cs5, attack: 0.5, release: 6, amp: 0.5
+  play :b4, attack: 0.5, release: 6, amp: 0.5
+  play :gs4, attack: 0.5, release: 6, amp: 0.5
+  play :e4, attack: 0.5, release: 6, amp: 0.5
+  sleep   6
+  play :cs5, attack: 0.2, release: 1, amp: 0.5
+  sleep 1
+  play :e5, attack: 0.2, release: 1, amp: 0.5
+  sleep 1
+  play :fs5, attack: 0.5, release: 4, amp: 0.5
+  play :cs5, attack: 0.5, release: 4, amp: 0.5
+  play :gs4, attack: 0.5, release: 4, amp: 0.5
+  sleep 4
+  play :gs5, attack: 0.5, release: 4, amp: 0.5
+  play :e5, attack: 0.5, release: 4, amp: 0.5
+  play :cs5, attack: 0.5, release: 4, amp: 0.5
+  play :b4, attack: 0.5, release: 4, amp: 0.5
+  sleep 4
+end
+
+define :chords_chorus_second_ending do
+  
+  play :g5, release: 0.5, amp: 1
+  play :e5, release: 0.5, amp: 1
+  play :cs5, release: 0.5, amp: 1
+  play :g4, release: 0.5, amp: 1
+  sleep  1.5
+  play :e5, release: 0.5, amp: 1
+  play :cs5, release: 0.5, amp: 1
+  play :as4, release: 0.5, amp: 1
+  play :e4, release: 0.5, amp: 1
+  sleep  1.5
+  play :e5, release: 0.5, amp: 1
+  play :cs5, release: 0.5, amp: 1
+  play :a4, release: 0.5, amp: 1
+  play :e4, release: 0.5, amp: 1
+  sleep  1
+  play :cs5, attack: 0.5, release: 6, amp: 0.5
+  play :b4, attack: 0.5, release: 6, amp: 0.5
+  play :gs4, attack: 0.5, release: 6, amp: 0.5
+  play :e4, attack: 0.5, release: 6, amp: 0.5
+  sleep   2.5
+  play :cs5, attack: 0.2, release: 1, amp: 0.5
+  sleep 1
+  play :e5, attack: 0.2, release: 1, amp: 0.5
+  sleep 1
+  play :fs5, attack: 0.5, release: 4, amp: 0.5
+  play :cs5, attack: 0.5, release: 4, amp: 0.5
+  play :gs4, attack: 0.5, release: 4, amp: 0.5
+  sleep 4
+  play :gs5, attack: 0.5, release: 4, amp: 0.5
+  play :e5, attack: 0.5, release: 4, amp: 0.5
+  play :cs5, attack: 0.5, release: 4, amp: 0.5
+  play :b4, attack: 0.5, release: 4, amp: 0.5
+  sleep 4
+end
+
+
+
+#chords_chorus_first_ending
+
+in_thread do
+  use_synth :saw
+  with_fx :flanger do
+    bass_intro
+    2.times do
+      bass_verse
+      bass_chorus
+      bass_chorus_first_ending
+    end
+  end
+end
+in_thread do
+  use_synth :saw
+  chords_intro
+  2.times do
+    chords_verse
+    chords_chorus
+    chords_chorus_first_ending
+  end
+end
