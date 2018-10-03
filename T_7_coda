@@ -1,0 +1,69 @@
+  #################################
+  ############### CODA ############
+  #################################
+
+in_thread do
+  live_loop :w do
+    sleep 0.5
+    play :cs4, release: 0.25, pan: 1
+    sleep 0.25
+    play :b3, release: 0.25, pan: 1
+    sleep 0.5
+    play :cs4, release: 0.25, pan: 1
+    sleep 0.5
+    play :b3, release: 0.25, pan: 1
+    sleep 0.25
+    play :cs4, release: 0.25, pan: 1
+    sleep 0.25
+    play :b3, release: 0.25, pan: 1
+    sleep 0.5
+    play :cs4, release: 0.25, pan: 1
+    sleep 1.75
+    play :cs4, release: 0.25, pan: 1
+    sleep 0.25
+    play :b3, release: 0.25, pan: 1
+    sleep 0.5
+    play :cs4, release: 0.25, pan: 1
+    sleep 0.5
+    play :b3, release: 0.25, pan: 1
+    sleep 0.25
+    play :cs4, release: 0.25, pan: 1
+    sleep 0.5
+    play :e4, release: 0.25, pan: 1
+    sleep 0.5
+    play :gs4, release: 0.25, pan: 1
+    sleep 0.5
+    play :fs4, release: 0.25, pan: 1
+    sleep 0.5
+  end
+end
+
+in_thread do
+  live_loop :b do
+    sleep 0.25
+    play :b3, release: 0.25, pan: -1
+    sleep 0.25
+    play :gs3, release: 0.25, pan: -1
+    sleep 0.25
+    play :fs3, release: 0.25, pan: -1
+    sleep 0.25
+    play :gs3, release: 0.25, pan: -1
+    sleep 0.5
+    play :gs3, release: 0.25, pan: -1
+    sleep 0.25
+    play :fs3, release: 0.25, pan: -1
+    sleep 0.25
+    play :gs3, release: 0.25, pan: -1
+    sleep 0.5
+    play :gs3, release: 0.25, pan: -1
+    sleep 0.25
+    play :fs3, release: 0.25, pan: -1
+    sleep 0.25
+    play :gs3, release: 0.25, pan: -1
+    sleep 0.25
+    play :b3, release: 0.25, pan: -1
+    sleep 0.5
+    play :cs4, release: 0.25, pan: -1
+    sleep 0.25
+  end
+end

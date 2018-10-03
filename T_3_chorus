@@ -1,0 +1,169 @@
+#################################
+#############CHORUS##############
+#################################
+
+define :chords_chorus do
+  play :Cs5, amp: 0.75
+  play :gs4, amp: 0.75
+  play :e4, amp: 0.75
+  sleep (0.75)
+  play :B4, release: 3, amp: 0.75
+  play :gs4, release: 3, amp: 0.75
+  play :e4, release: 3, amp: 0.75
+  sleep   3.25
+  play :b4, amp: 0.75
+  play :gs4, amp: 0.75
+  play :e4, amp: 0.75
+  sleep   1
+  play :as4, amp: 0.75
+  play :gs4, amp: 0.75
+  play :cs4, amp: 0.75
+  sleep   1
+  play :gs4, release: 2, amp: 0.75
+  play :e4, release: 2, amp: 0.75
+  play :b3, release: 2, amp: 0.75
+  play :gs3, release: 2, amp: 0.75
+  sleep   2
+  #Fs7
+  play :fs4, attack: 0.5, release: 3, amp: 0.5
+  play :e4, attack: 0.5, release: 3, amp: 0.5
+  play :cs4, attack: 0.5, release: 3, amp: 0.5
+  play :as3, attack: 0.5, release: 3, amp: 0.5
+  sleep   4
+  #Fsm7
+  play :fs4, attack: 0.5, release: 3, amp: 0.5
+  play :e4, attack: 0.5, release: 3, amp: 0.5
+  play :cs4, attack: 0.5, release: 3, amp: 0.5
+  play :a3, attack: 0.5, release: 3, amp: 0.5
+  sleep   4
+  play :Cs5, amp: 0.75
+  play :gs4, amp: 0.75
+  play :e4, amp: 0.75
+  sleep (0.75)
+  play :B4, release: 3, amp: 0.75
+  play :gs4, release: 3, amp: 0.75
+  play :e4, release: 3, amp: 0.75
+  sleep   3.25
+  play :b4, amp: 0.75
+  play :gs4, amp: 0.75
+  play :e4, amp: 0.75
+  sleep   1
+  play :as4, amp: 0.75
+  play :gs4, amp: 0.75
+  play :cs4, amp: 0.75
+  sleep   1
+  play :gs4, release: 2, amp: 0.75
+  play :e4, release: 2, amp: 0.75
+  play :b3, release: 2, amp: 0.75
+  play :gs3, release: 2, amp: 0.75
+  sleep   2
+  #Fs7
+  play :fs4, attack: 0.5, release: 3, amp: 0.5
+  play :e4, attack: 0.5, release: 3, amp: 0.5
+  play :cs4, attack: 0.5, release: 3, amp: 0.5
+  play :as3, attack: 0.5, release: 3, amp: 0.5
+  sleep   4
+end
+
+define :bass_chorus do
+  7.times do
+    play :b1, release: 0.5
+    sleep 0.5
+    play :cs2, release: 0.5
+    sleep 0.5
+    play :e2, release: 0.5
+    sleep 0.5
+    play :fs2, release: 0.5
+    sleep 0.5
+    play :cs2, release: 0.25
+    sleep 0.75
+    play :cs2, release: 0.25
+    sleep 1
+    play :cs2, release: 0.25
+    sleep 0.25
+  end
+end
+
+define :vocals_chorus do
+  play :Cs5
+  sleep 0.75
+  play :B4, release: 3
+  sleep   3.25
+  play :b4
+  sleep   1
+  play :as4
+  sleep   1
+  play :gs4, release: 2
+  sleep   1.5
+  play :gs4, release: 0.75
+  sleep   0.5
+  play :gs4, release: 0.75
+  sleep   0.5
+  play :fs4, release: 0.75
+  sleep   0.5
+  play :fs4, release: 0.5
+  sleep   0.25
+  play :cs4, release: 0.75
+  sleep   0.5
+  play :e4, release: 0.75
+  sleep   0.75
+  play :cs4, release: 0.75
+  sleep   0.5
+  play :e4, release: 0.75
+  sleep   0.5
+  play :fs4, release: 0.75
+  sleep   0.25
+  play :gs4, release: 0.75
+  sleep   0.75
+  play :fs4, release: 0.75
+  sleep   0.5
+  play :fs4, release: 0.75
+  sleep   0.5
+  play :e4, release: 0.75
+  sleep   0.25
+  play :fs4, release: 0.75
+  sleep   0.75
+  play :gs4, release: 0.55
+  sleep 0.5
+  play :b4, release: 0.55
+  sleep 0.5
+  play :gs4, release: 0.55
+  sleep 0.5
+  play :Cs5
+  sleep 0.75
+  play :B4, release: 3
+  sleep   3.25
+  play :b4
+  sleep   1
+  play :as4
+  sleep   1
+  play :gs4, release: 2
+  sleep   1.5
+  play :gs4, release: 0.75
+  sleep   0.5
+  play :gs4, release: 0.75
+  sleep   0.5
+  play :fs4, release: 0.75
+  sleep   0.5
+  play :fs4, release: 0.5
+  sleep   0.5
+  play :e4, release: 0.5
+  sleep   0.25
+  play :e4, release: 0.85
+  sleep   0.75
+  play :cs4, release: 0.75
+  sleep   0.5
+  play :e4, release: 0.75
+  sleep   0.5
+  play :fs4, release: 0.75
+  sleep   0.5
+end
+
+define :drums_chorus do
+  14.times do
+    sample :drum_heavy_kick
+    sleep 1
+    sample :elec_hi_snare
+    sleep 1
+  end
+end

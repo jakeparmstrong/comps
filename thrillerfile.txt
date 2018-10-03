@@ -1,0 +1,1 @@
+run_file "~/Desktop/Projects/comps/THRILLER.rb"

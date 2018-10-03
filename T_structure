@@ -1,0 +1,68 @@
+#################################
+##############STRUCTURE##########
+#################################
+
+
+use_bpm 118
+in_thread do
+  use_synth :saw
+  with_fx :flanger do
+    bass_intro
+    #----#
+    bass_verse
+    bass_chorus
+    bass_chorus_first_ending
+    #----#
+    bass_verse
+    bass_chorus
+    bass_chorus_second_ending
+    bass_bridge
+    #----#
+    bass_verse
+    bass_chorus
+    #----#
+    #    bass_coda
+    #bass_outro_vamp
+  end
+end
+
+in_thread do
+  use_synth :saw
+  #vocals_intro
+  #----#
+  vocals_verse
+  vocals_chorus
+  vocals_chorus_first_ending
+  #----#
+  vocals_verse
+  vocals_chorus
+  vocals_chorus_second_ending
+  vocals_bridge
+  #----#
+  vocals_verse
+  vocals_chorus
+  vocals_coda
+end
+
+in_thread do
+  use_synth :saw
+  #chords_intro
+  #----#
+  chords_verse
+  chords_chorus
+  chords_chorus_first_ending
+  #----#
+  chords_verse
+  chords_chorus
+  chords_chorus_second_ending
+  chords_bridge
+  #----#
+  chords_verse
+  chords_chorus
+  chords_coda
+end
+
+in_thread do
+  drums_intro
+  drums1_verse
+end

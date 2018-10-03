@@ -1,0 +1,101 @@
+#################################
+##############INTRO##############
+#################################
+
+define :vocals_intro do
+  end
+  
+  define :chords_intro do
+    play :Cs6, sustain_level: 1.5
+    play :gs5, sustain_level: 1.5
+    play :e5, sustain_level: 1.5
+    play :cs5, sustain_level: 1.5
+    sleep (0.75)
+    play :B5, release: 3, sustain_level: 1.5
+    play :gs5, release: 3, sustain_level: 1.5
+    play :e5, release: 3, sustain_level: 1.5
+    play :b4, release: 3, sustain_level: 1.5
+    sleep   3.25
+    play :b5, sustain_level: 1.5
+    play :gs5, sustain_level: 1.5
+    play :e5, sustain_level: 1.5
+    play :b4, sustain_level: 1.5
+    sleep   1
+    play :as5, sustain_level: 1.5
+    play :gs5, sustain_level: 1.5
+    play :cs4, sustain_level: 1.5
+    play :as4, sustain_level: 1.5
+    sleep   1
+    play :gs5, release: 2, sustain_level: 1.5
+    play :e5, release: 2, sustain_level: 1.5
+    play :b4, release: 2, sustain_level: 1.5
+    play :gs4, release: 2, sustain_level: 1.5
+    sleep   2
+    play :gs4, attack: 0.5, release: 6, amp: 0.5
+    play :e4, attack: 0.5, release: 6, amp: 0.5
+    play :cs4, attack: 0.5, release: 6, amp: 0.5
+    play :b3, attack: 0.5, release: 6, amp: 0.5
+    sleep   8
+    play :gs4, attack: 0.5, release: 6, amp: 0.5
+    play :e4, attack: 0.5, release: 6, amp: 0.5
+    play :cs4, attack: 0.5, release: 6, amp: 0.5
+    play :b3, attack: 0.5, release: 6, amp: 0.5
+    sleep   8
+  end
+  
+  define :bass_intro do
+    play :Cs2, sustain_level: 1.5
+    play :Cs3, sustain_level: 1.5
+    sleep (0.75)
+    play :E2, release: 3.5, sustain_level: 1.5
+    play :E3, release: 3.5, sustain_level: 1.5
+    sleep 3.25
+    play :e2, sustain_level: 1.5
+    play :e3, sustain_level: 1.5
+    sleep 1
+    play :fs2, sustain_level: 1.5
+    play :fs3, sustain_level: 1.5
+    sleep 1
+    play :cs2, release: 1.75, sustain_level: 1.5
+    play :cs3, release: 1.75, sustain_level: 1.5
+    sleep 1.75
+    play :cs2, release: 0.25
+    sleep 0.25
+    4.times do
+      play :b1, release: 0.5
+      sleep 0.5
+      play :cs2, release: 0.5
+      sleep 0.5
+      play :e2, release: 0.5
+      sleep 0.5
+      play :fs2, release: 0.5
+      sleep 0.5
+      play :cs2, release: 0.25
+      sleep 0.75
+      play :cs2, release: 0.25
+      sleep 1
+      play :cs2, release: 0.25
+      sleep 0.25
+    end
+  end
+  
+  define :drums_intro do
+    sample :drum_bass_hard, sustain_level: 3
+    sleep 0.75
+    sample :drum_bass_hard, sustain_level: 3
+    # end
+    sleep 3.25
+    sample :drum_bass_hard, sustain_level: 3
+    sleep 1
+    sample :drum_bass_hard, sustain_level: 3
+    sleep 1
+    sample :drum_bass_hard, sustain_level: 3
+    sleep 0.75
+    sample :drum_snare_hard, sustain_level: 2
+    sleep 0.25
+    sample :drum_snare_hard, sustain_level: 2
+    sleep 0.75
+    sample :drum_snare_hard, sustain_level: 2
+    sleep 0.25
+  end
+  

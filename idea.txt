@@ -1,51 +1,35 @@
-play :ab6+0
-sleep 0.25
-play :eb6+0
-sleep 0.25
-play :bb5+0
-sleep 0.25
-play :f5+0
-sleep 0.25
-play :c5+0
-sleep 0.25
-play :g4+0
-sleep 0.25
+use_random_seed 1
+use_osc "localhost", 4580
 
-play :f6+0
-sleep 0.25
-play :db6+0
-sleep 0.25
-play :ab5+0
-sleep 0.25
-play :gb5+0
-sleep 0.25
-play :db5+0
-sleep 0.25
-play :gb4+0
-sleep 0.25
+inc = 0.02
+unit = 0.125
+use_synth :pluck
 
-play :eb6+0
-sleep 0.25
-play :bb5+0
-sleep 0.25
-play :f5+0
-sleep 0.25
-play :c5+0
-sleep 0.25
-play :g4+0
-sleep 0.25
-play :d4+0
-sleep 0.25
+define :sound do
+  live_loop :v1 do
+    maxv = 0.15
+    startv = 0
+    att = rrand(0,0.05)
+    n = rrand_i(11, 32) #number of repeated pitches
+    if one_in(10)
+      n = 100
+      maxv = 0.1
+    end
+    r = rrand_i(11, 50) #number of rests between pitches
+    p = choose([:E4, :G4, :A4, :c3, :Fs4, :Bb3]) #pitch
+    where = choose([-1,-0.75,-0.5,-0.25,0.25,0.5,0.75,1])
+    #    r.times do
+    #      sleep unit
+    #    end
+    n.times do
+      if startv < maxv
+        startv = startv + inc
+      end
+      play p, pan: where, amp: startv, attack: att
+      osc "/v1",String(where)+"/"+String(startv)+"/"+String(p) #seems to work, next receive and print this, then execute. Actually this is just topic, right? or is it msg? check that you want the execuse parts or all of message. topic is for each light. Make num of voices div by 8 too
+      sleep unit
+    end
+  end
+end
 
-play :db6+0
-sleep 0.25
-play :ab5+0
-sleep 0.25
-play :gb5+0
-sleep 0.25
-play :db5+0
-sleep 0.25
-play :gb4+0
-sleep 0.25
-play :db4+0
-sleep 0.25
+sound
