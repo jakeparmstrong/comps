@@ -2,16 +2,54 @@
 #########################THRILLER##############################
 ###############################################################
 
+#################################
+############### UBIQUITOUS ######
+#################################
+
+verse = 1 #This is incremented in left_guitar thread
+chorus = 1 #incremented in guitar thread
+
+define :left_guitar_pattern do
+  sleep 0.25
+  play :b3, release: 0.25, pan: -1, amp: 0.2
+  sleep 0.25
+  play :gs3, release: 0.25, pan: -1, amp: 0.5
+  sleep 0.25
+  play :fs3, release: 0.25, pan: -1, amp: 0.5
+  sleep 0.25
+  play :gs3, release: 0.25, pan: -1, amp: 0.5
+  sleep 0.5
+  play :gs3, release: 0.25, pan: -1, amp: 0.5
+  sleep 0.25
+  play :fs3, release: 0.25, pan: -1, amp: 0.5
+  sleep 0.25
+  play :gs3, release: 0.25, pan: -1, amp: 0.5
+  sleep 0.5
+  play :gs3, release: 0.25, pan: -1, amp: 0.5
+  sleep 0.25
+  play :fs3, release: 0.25, pan: -1, amp: 0.5
+  sleep 0.25
+  play :gs3, release: 0.25, pan: -1, amp: 0.5
+  sleep 0.25
+  play :b3, release: 0.25, pan: -1, amp: 0.5
+  sleep 0.5
+  play :cs4, release: 0.25, pan: -1, amp: 0.5
+  sleep 0.25
+end
+
+use_bpm 118
 
 #################################
 ##############INTRO##############
 #################################
 
 define :vocals_intro do
+sleep 4
 sleep 4 * 6
   end
   
   define :chords_intro do
+sleep 4
     play :Cs6, sustain_level: 1.25
     play :gs5, sustain_level: 1.25
     play :e5, sustain_level: 1.25
@@ -37,19 +75,20 @@ sleep 4 * 6
     play :b4, release: 3, sustain_level: 1.25
     play :gs4, release: 3, sustain_level: 1.25
     sleep   2
-    play :gs4, attack: 0.5, release: 6, amp: 0.5
-    play :e4, attack: 0.5, release: 6, amp: 0.5
-    play :cs4, attack: 0.5, release: 6, amp: 0.5
+    play :gs4, attack: 0.5, release: 6, amp: 0.25
+    play :e4, attack: 0.5, release: 6, amp: 0.25
+    play :cs4, attack: 0.5, release: 6, amp: 0.25
     play :b3, attack: 0.5, release: 6, amp: 0.5
     sleep   8
-    play :gs4, attack: 0.5, release: 6, amp: 0.5
-    play :e4, attack: 0.5, release: 6, amp: 0.5
-    play :cs4, attack: 0.5, release: 6, amp: 0.5
-    play :b3, attack: 0.5, release: 6, amp: 0.5
+    play :gs4, attack: 0.5, release: 6, amp: 0.25
+    play :e4, attack: 0.5, release: 6, amp: 0.25
+    play :cs4, attack: 0.5, release: 6, amp: 0.25
+    play :b3, attack: 0.5, release: 6, amp: 0.25
     sleep   8
   end
   
   define :bass_intro do
+sleep 4
     play :Cs2, sustain_level: 1.5
     play :Cs3, sustain_level: 1.5
     sleep (0.75)
@@ -86,6 +125,7 @@ sleep 4 * 6
   end
   
 define :drums_intro do
+sleep 4
   sample :drum_bass_hard, sustain_level: 2
   sleep 0.75
   sample :drum_bass_hard, sustain_level: 2
@@ -117,6 +157,11 @@ define :drums_intro do
     sample :elec_hi_snare
     sleep 1
   end
+end
+
+define :left_guitar_pattern_intro do
+sleep 4
+sleep 4 * 6
 end
   
 
@@ -293,66 +338,67 @@ end
 
 define :chords_verse do
   #Fs7
-  play :cs4, attack: 0.5, release: 6, amp: 0.5
-  play :as3, attack: 0.5, release: 6, amp: 0.5
-  play :fs3, attack: 0.5, release: 6, amp: 0.5
-  play :e3, attack: 0.5, release: 6, amp: 0.5
+  play :cs4, attack: 0.5, release: 6, amp: 0.25
+  play :as3, attack: 0.5, release: 6, amp: 0.25
+  play :fs3, attack: 0.5, release: 6, amp: 0.25
+  play :e3, attack: 0.5, release: 6, amp: 0.25
   sleep   8
   #Csm7
-  play :e4, attack: 0.5, release: 6, amp: 0.5
-  play :cs4, attack: 0.5, release: 6, amp: 0.5
-  play :b3, attack: 0.5, release: 6, amp: 0.5
-  play :gs3, attack: 0.5, release: 6, amp: 0.5
+  play :e4, attack: 0.5, release: 6, amp: 0.25
+  play :cs4, attack: 0.5, release: 6, amp: 0.25
+  play :b3, attack: 0.5, release: 6, amp: 0.25
+  play :gs3, attack: 0.5, release: 6, amp: 0.25
   sleep   8
   #Fs7
-  play :cs4, attack: 0.5, release: 6, amp: 0.5
-  play :as3, attack: 0.5, release: 6, amp: 0.5
-  play :fs3, attack: 0.5, release: 6, amp: 0.5
-  play :e3, attack: 0.5, release: 6, amp: 0.5
+  play :cs4, attack: 0.5, release: 6, amp: 0.25
+  play :as3, attack: 0.5, release: 6, amp: 0.25
+  play :fs3, attack: 0.5, release: 6, amp: 0.25
+  play :e3, attack: 0.5, release: 6, amp: 0.25
   sleep   8
   #Csm7
-  play :e4, attack: 0.5, release: 6, amp: 0.5
-  play :cs4, attack: 0.5, release: 6, amp: 0.5
-  play :b3, attack: 0.5, release: 6, amp: 0.5
-  play :gs3, attack: 0.5, release: 6, amp: 0.5
+  play :e4, attack: 0.5, release: 6, amp: 0.25
+  play :cs4, attack: 0.5, release: 6, amp: 0.25
+  play :b3, attack: 0.5, release: 6, amp: 0.25
+  play :gs3, attack: 0.5, release: 6, amp: 0.25
   sleep   8
   #Fs7
-  play :cs4, attack: 0.5, release: 6, amp: 0.5
-  play :as3, attack: 0.5, release: 6, amp: 0.5
-  play :fs3, attack: 0.5, release: 6, amp: 0.5
-  play :e3, attack: 0.5, release: 6, amp: 0.5
+  play :cs4, attack: 0.5, release: 6, amp: 0.25
+  play :as3, attack: 0.5, release: 6, amp: 0.25
+  play :fs3, attack: 0.5, release: 6, amp: 0.25
+  play :e3, attack: 0.5, release: 6, amp: 0.25
   sleep   8
   #Csm7
-  play :gs4, attack: 0.5, release: 6, amp: 0.5
-  play :e4, attack: 0.5, release: 6, amp: 0.5
-  play :cs4, attack: 0.5, release: 6, amp: 0.5
-  play :b3, attack: 0.5, release: 6, amp: 0.5
+  play :gs4, attack: 0.5, release: 6, amp: 0.25
+  play :e4, attack: 0.5, release: 6, amp: 0.25
+  play :cs4, attack: 0.5, release: 6, amp: 0.25
+  play :b3, attack: 0.5, release: 6, amp: 0.25
   sleep   8
   #Fs7
-  play :as4, attack: 0.5, release: 6, amp: 0.5
-  play :fs4, attack: 0.5, release: 6, amp: 0.5
-  play :e4, attack: 0.5, release: 6, amp: 0.5
-  play :cs4, attack: 0.5, release: 6, amp: 0.5
+  play :as4, attack: 0.5, release: 6, amp: 0.25
+  play :fs4, attack: 0.5, release: 6, amp: 0.25
+  play :e4, attack: 0.5, release: 6, amp: 0.25
+  play :cs4, attack: 0.5, release: 6, amp: 0.25
   sleep   8
   #Csm7
-  play :gs4, attack: 0.5, release: 2, amp: 0.5
-  play :e4, attack: 0.5, release: 2, amp: 0.5
-  play :cs4, attack: 0.5, release: 2, amp: 0.5
-  play :b3, attack: 0.5, release: 2, amp: 0.5
+  play :gs4, attack: 0.5, release: 2, amp: 0.25
+  play :e4, attack: 0.5, release: 2, amp: 0.25
+  play :cs4, attack: 0.5, release: 2, amp: 0.25
+  play :b3, attack: 0.5, release: 2, amp: 0.25
   sleep   2
   #Amaj7
-  play :gs4, attack: 0.5, release: 2, amp: 0.5
-  play :e4, attack: 0.5, release: 2, amp: 0.5
-  play :cs4, attack: 0.5, release: 2, amp: 0.5
-  play :a3, attack: 0.5, release: 2, amp: 0.5
+  play :gs4, attack: 0.5, release: 2, amp: 0.25
+  play :e4, attack: 0.5, release: 2, amp: 0.25
+  play :cs4, attack: 0.5, release: 2, amp: 0.25
+  play :a3, attack: 0.5, release: 2, amp: 0.25
   sleep   2
   #Gsm7
-  play :gs4, attack: 0.5, release: 4, amp: 0.5
-  play :fs4, attack: 0.5, release: 4, amp: 0.5
-  play :ds4, attack: 0.5, release: 4, amp: 0.5
-  play :b3, attack: 0.5, release: 4, amp: 0.5
+  play :gs4, attack: 0.5, release: 4, amp: 0.25
+  play :fs4, attack: 0.5, release: 4, amp: 0.25
+  play :ds4, attack: 0.5, release: 4, amp: 0.25
+  play :b3, attack: 0.5, release: 4, amp: 0.25
   sleep   4
 end
+
 
 define :bass_verse do
   16.times do
@@ -390,64 +436,78 @@ define :drums1_verse do
   end
 end
 
+define :left_guitar_pattern_verse do
+  if (verse == 1) 
+    sleep 4 * 8
+    8.times do
+      left_guitar_pattern
+    end
+  else
+    16.times do
+      left_guitar_pattern
+    end
+  end  
+  verse = verse + 1
+end
+
 #################################
 #############CHORUS##############
 #################################
 
 define :chords_chorus do
-  play :Cs5, amp: 0.75
-  play :gs4, amp: 0.75
-  play :e4, amp: 0.75
+  play :Cs5, amp: 0.5
+  play :gs4, amp: 0.5
+  play :e4, amp: 0.5
   sleep (0.75)
-  play :B4, release: 3, amp: 0.75
-  play :gs4, release: 3, amp: 0.75
-  play :e4, release: 3, amp: 0.75
+  play :B4, release: 3, amp: 0.5
+  play :gs4, release: 3, amp: 0.5
+  play :e4, release: 3, amp: 0.5
   sleep   3.25
-  play :b4, amp: 0.75
-  play :gs4, amp: 0.75
-  play :e4, amp: 0.75
+  play :b4, amp: 0.5
+  play :gs4, amp: 0.5
+  play :e4, amp: 0.5
   sleep   1
-  play :as4, amp: 0.75
-  play :gs4, amp: 0.75
-  play :cs4, amp: 0.75
+  play :as4, amp: 0.5
+  play :gs4, amp: 0.5
+  play :cs4, amp: 0.5
   sleep   1
-  play :gs4, release: 2, amp: 0.75
-  play :e4, release: 2, amp: 0.75
-  play :b3, release: 2, amp: 0.75
-  play :gs3, release: 2, amp: 0.75
+  play :gs4, release: 2, amp: 0.5
+  play :e4, release: 2, amp: 0.5
+  play :b3, release: 2, amp: 0.5
+  play :gs3, release: 2, amp: 0.5
   sleep   2
   #Fs7
-  play :fs4, attack: 0.5, release: 3, amp: 0.5
-  play :e4, attack: 0.5, release: 3, amp: 0.5
-  play :cs4, attack: 0.5, release: 3, amp: 0.5
+  play :fs4, attack: 0.5, release: 3, amp: 0.25
+  play :e4, attack: 0.5, release: 3, amp: 0.25
+  play :cs4, attack: 0.5, release: 3, amp: 0.25
   play :as3, attack: 0.5, release: 3, amp: 0.5
   sleep   4
   #Fsm7
-  play :fs4, attack: 0.5, release: 3, amp: 0.5
-  play :e4, attack: 0.5, release: 3, amp: 0.5
-  play :cs4, attack: 0.5, release: 3, amp: 0.5
-  play :a3, attack: 0.5, release: 3, amp: 0.5
+  play :fs4, attack: 0.5, release: 3, amp: 0.25
+  play :e4, attack: 0.5, release: 3, amp: 0.25
+  play :cs4, attack: 0.5, release: 3, amp: 0.25
+  play :a3, attack: 0.5, release: 3, amp: 0.25
   sleep   4
-  play :Cs5, amp: 0.75
-  play :gs4, amp: 0.75
-  play :e4, amp: 0.75
+  play :Cs5, amp: 0.5
+  play :gs4, amp: 0.5
+  play :e4, amp: 0.5
   sleep (0.75)
-  play :B4, release: 3, amp: 0.75
-  play :gs4, release: 3, amp: 0.75
-  play :e4, release: 3, amp: 0.75
+  play :B4, release: 3, amp: 0.5
+  play :gs4, release: 3, amp: 0.5
+  play :e4, release: 3, amp: 0.5
   sleep   3.25
-  play :b4, amp: 0.75
-  play :gs4, amp: 0.75
-  play :e4, amp: 0.75
+  play :b4, amp: 0.5
+  play :gs4, amp: 0.5
+  play :e4, amp: 0.5
   sleep   1
-  play :as4, amp: 0.75
-  play :gs4, amp: 0.75
-  play :cs4, amp: 0.75
+  play :as4, amp: 0.5
+  play :gs4, amp: 0.5
+  play :cs4, amp: 0.5
   sleep   1
-  play :gs4, release: 2, amp: 0.75
-  play :e4, release: 2, amp: 0.75
-  play :b3, release: 2, amp: 0.75
-  play :gs3, release: 2, amp: 0.75
+  play :gs4, release: 2, amp: 0.5
+  play :e4, release: 2, amp: 0.5
+  play :b3, release: 2, amp: 0.5
+  play :gs3, release: 2, amp: 0.5
   sleep   2
   #Fs7
   play :fs4, attack: 0.5, release: 3, amp: 0.5
@@ -568,6 +628,18 @@ define :drums_chorus do
   end
 end
 
+
+define :left_guitar_pattern_chorus do
+  if (chorus > 2) 
+    7.times do
+      left_guitar_pattern
+    end
+  else
+    sleep 4 * 7
+  end  
+  verse = chorus + 1
+end
+
 #################################
 ######## FIRST ENDING ###########
 #################################
@@ -677,6 +749,13 @@ define :drums_chorus_first_ending do
   end
 end
 
+define :left_guitar_pattern_chorus_first_ending do
+  sleep	4 * 1
+  3.times do
+    left_guitar_pattern
+  end
+end
+
 
   #################################
   ######## SECOND ENDING ##########
@@ -768,6 +847,10 @@ define :drums_chorus_second_ending do
     sample :elec_hi_snare
     sleep 1
   end
+end
+
+define :left_guitar_pattern_chorus_second_ending do
+  sleep	4 * 4
 end
 
 #################################
@@ -1032,13 +1115,9 @@ end
 define :drums_bridge do
     10.times do
     sample :drum_heavy_kick
-    sleep 0.5
-    sample :elec_ping, amp: 0.55, pan: 1
-    sleep 0.5
+    sleep 1
     sample :elec_hi_snare
-    sleep 0.25
-    sample :elec_ping, amp: 0.55, pan: 1
-    sleep 0.75
+    sleep 1
     sample :drum_heavy_kick
     sleep 1
     sample :elec_hi_snare
@@ -1046,7 +1125,10 @@ define :drums_bridge do
   end
 end
 
-use_bpm 118
+define :left_guitar_pattern_bridge do
+  sleep 4 * 10
+end
+
 
 in_thread do
   use_synth :saw
@@ -1075,10 +1157,12 @@ in_thread do
   vocals_intro
   #----#
   vocals_verse
+  verse = verse + 1
   vocals_chorus
   vocals_chorus_first_ending
   #----#
   vocals_verse
+  verse = verse + 1
   vocals_chorus
   vocals_chorus_second_ending
   vocals_bridge
@@ -1087,6 +1171,25 @@ in_thread do
   vocals_chorus
 #  vocals_coda
 # vocals_outro_vamp
+end
+
+in_thread do
+  use_synth :dtri
+  left_guitar_pattern_intro
+  #----#
+  left_guitar_pattern_verse
+  left_guitar_pattern_chorus
+  left_guitar_pattern_chorus_first_ending
+  #----#
+  left_guitar_pattern_verse
+  left_guitar_pattern_chorus
+  left_guitar_pattern_chorus_second_ending
+  left_guitar_pattern_bridge
+  #----#
+  left_guitar_pattern_verse
+  left_guitar_pattern_chorus
+#  left_guitar_pattern_coda
+# left_guitar_pattern_outro_vamp
 end
 
 in_thread do
@@ -1116,7 +1219,7 @@ in_thread do
   drums1_verse
   drums_chorus
   drums_chorus_second_ending
-drums_bridge
+  drums_bridge
   drums1_verse
   drums_chorus
 #drums_coda
