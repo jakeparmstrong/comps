@@ -1,11 +1,17 @@
 ###############################################################
 #########################THRILLER##############################
 ###############################################################
+###############################################################
+#############################Words and Music: Rod Temperton####
+##############Performer: Michael Jackson#######################
+#######################Sonic Pi Trasncription: Jacob Armstrong#
+###############################################################
 
 #################################
 ############### UBIQUITOUS ######
 #################################
 
+use_random_seed 4
 verse = 1 #This is incremented in left_guitar thread
 chorus = 1 #incremented in guitar thread
 
@@ -37,95 +43,146 @@ define :left_guitar_pattern do
   sleep 0.25
 end
 
+define :right_guitar_pattern do
+  sleep 0.5
+  play :cs4, release: 0.3, pan: 1, amp: 0.15
+  sleep 0.25
+  play :b3, release: 0.3, pan: 1, amp: 0.15
+  sleep 0.5
+  play :cs4, release: 0.3, pan: 1, amp: 0.15
+  sleep 0.5
+  play :b3, release: 0.35, pan: 1, amp: 0.15
+  sleep 0.25
+  play :cs4, release: 0.75, pan: 1, amp: 0.15
+  sleep 0.5
+  play :e4, release: 0.75, pan: 1, amp: 0.15
+  sleep 0.5
+  play :gs4, release: 0.75, pan: 1, amp: 0.15
+  sleep 0.5
+  play :fs4, release: 0.5, pan: 1, amp: 0.15
+  sleep 0.5
+end
+
+
+define :bassline do
+  play :b1, release: 0.5
+  sleep 0.5
+  play :cs2, release: 0.5
+  sleep 0.5
+  play :e2, release: 0.5
+  sleep 0.5
+  play :fs2, release: 0.5
+  sleep 0.5
+  play :cs2, release: 0.25
+  sleep 0.75
+  play :cs2, release: 0.25
+  sleep 1
+  play :cs2, release: 0.25
+  sleep 0.25
+end
+
 use_bpm 118
 
 #################################
 ##############INTRO##############
 #################################
 
+
+define :sfx_intro do
+  sample "/home/pi/Downloads/creak.wav", rate: 0.8, pan: 1
+  sleep 1
+  sample "/home/pi/Downloads/wind2.wav"
+  sample "/home/pi/Downloads/footsteps1.wav", rate: 0.8, pan: 1
+  sleep 2
+  sleep 8
+  sample "/home/pi/Downloads/wind2.wav"
+  sleep 2
+  sample "/home/pi/Downloads/howl.wav", pan: -0.5
+end
+
 define :vocals_intro do
-sleep 4
-sleep 4 * 6
-  end
-  
-  define :chords_intro do
-sleep 4
-    play :Cs6, sustain_level: 1.25
-    play :gs5, sustain_level: 1.25
-    play :e5, sustain_level: 1.25
-    play :cs5, sustain_level: 1.25
-    sleep (0.75)
-    play :B5, release: 4, sustain_level: 1.25
-    play :gs5, release: 4, sustain_level: 1.25
-    play :e5, release: 4, sustain_level: 1.25
-    play :b4, release: 4, sustain_level: 1.25
-    sleep   3.25
-    play :b5, release: 1.5, sustain_level: 1.25
-    play :gs5, release: 1.5, sustain_level: 1.25
-    play :e5, release: 1.5, sustain_level: 1.25
-    play :b4, release: 1.5, sustain_level: 1.25
-    sleep   1
-    play :as5, sustain_level: 1.25
-    play :gs5, sustain_level: 1.25
-    play :cs4, sustain_level: 1.25
-    play :as4, sustain_level: 1.25
-    sleep   1
-    play :gs5, release: 3, sustain_level: 1.25
-    play :e5, release: 3, sustain_level: 1.25
-    play :b4, release: 3, sustain_level: 1.25
-    play :gs4, release: 3, sustain_level: 1.25
-    sleep   2
-    play :gs4, attack: 0.5, release: 6, amp: 0.25
-    play :e4, attack: 0.5, release: 6, amp: 0.25
-    play :cs4, attack: 0.5, release: 6, amp: 0.25
-    play :b3, attack: 0.5, release: 6, amp: 0.5
-    sleep   8
-    play :gs4, attack: 0.5, release: 6, amp: 0.25
-    play :e4, attack: 0.5, release: 6, amp: 0.25
-    play :cs4, attack: 0.5, release: 6, amp: 0.25
-    play :b3, attack: 0.5, release: 6, amp: 0.25
-    sleep   8
-  end
-  
-  define :bass_intro do
-sleep 4
-    play :Cs2, sustain_level: 1.5
-    play :Cs3, sustain_level: 1.5
-    sleep (0.75)
-    play :E2, release: 4, sustain_level: 1.5
-    play :E3, release: 4, sustain_level: 1.5
-    sleep 3.25
-    play :e2, sustain_level: 1.5
-    play :e3, sustain_level: 1.5
+  sleep 20
+  sleep 6 * 4
+end
+
+define :chords_intro do
+  sleep 20
+  play :Cs6
+  play :gs5
+  play :e5
+  play :cs5
+  sleep (0.75)
+  play :B5, release: 4
+  play :gs5, release: 4
+  play :e5, release: 4
+  play :b4, release: 4
+  sleep   3.25
+  play :b5, release: 1.5
+  play :gs5, release: 1.5
+  play :e5, release: 1.5
+  play :b4, release: 1.5
+  sleep   1
+  play :as5
+  play :gs5
+  play :cs4
+  play :as4
+  sleep   1
+  play :gs5, release: 3
+  play :e5, release: 3
+  play :b4, release: 3
+  play :gs4, release: 3
+  sleep   2
+  play :gs4, attack: 0.5, release: 6, amp: 0.25
+  play :e4, attack: 0.5, release: 6, amp: 0.25
+  play :cs4, attack: 0.5, release: 6, amp: 0.25
+  play :b3, attack: 0.5, release: 6, amp: 0.5
+  sleep   8
+  play :gs4, attack: 0.5, release: 6, amp: 0.25
+  play :e4, attack: 0.5, release: 6, amp: 0.25
+  play :cs4, attack: 0.5, release: 6, amp: 0.25
+  play :b3, attack: 0.5, release: 6, amp: 0.25
+  sleep   8
+end
+
+define :bass_intro do
+  sleep 20
+  play :Cs2
+  play :Cs3
+  sleep 0.75
+  play :E2, release: 4
+  play :E3, release: 4
+  sleep 3.25
+  play :e2
+  play :e3
+  sleep 1
+  play :fs2
+  play :fs3
+  sleep 1
+  play :cs2, release: 1.75
+  play :cs3, release: 1.75
+  sleep 1.75
+  play :cs2, release: 0.25
+  sleep 0.25
+  4.times do
+    play :b1, release: 0.5
+    sleep 0.5
+    play :cs2, release: 0.5
+    sleep 0.5
+    play :e2, release: 0.5
+    sleep 0.5
+    play :fs2, release: 0.5
+    sleep 0.5
+    play :cs2, release: 0.25
+    sleep 0.75
+    play :cs2, release: 0.25
     sleep 1
-    play :fs2, sustain_level: 1.5
-    play :fs3, sustain_level: 1.5
-    sleep 1
-    play :cs2, release: 1.75, sustain_level: 1.5
-    play :cs3, release: 1.75, sustain_level: 1.5
-    sleep 1.75
     play :cs2, release: 0.25
     sleep 0.25
-    4.times do
-      play :b1, release: 0.5
-      sleep 0.5
-      play :cs2, release: 0.5
-      sleep 0.5
-      play :e2, release: 0.5
-      sleep 0.5
-      play :fs2, release: 0.5
-      sleep 0.5
-      play :cs2, release: 0.25
-      sleep 0.75
-      play :cs2, release: 0.25
-      sleep 1
-      play :cs2, release: 0.25
-      sleep 0.25
-    end
   end
-  
+end
+
 define :drums_intro do
-sleep 4
+  sleep 20
   sample :drum_bass_hard, sustain_level: 2
   sleep 0.75
   sample :drum_bass_hard, sustain_level: 2
@@ -145,25 +202,50 @@ sleep 4
   sleep 0.25
   4.times do
     sample :drum_heavy_kick
+    sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
     sleep 0.5
-    sample :elec_ping, amp: 0.55, pan: 1
+    sample :elec_ping, amp: 0.4, pan: 1
+    sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
     sleep 0.5
     sample :elec_hi_snare
+    sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
     sleep 0.25
-    sample :elec_ping, amp: 0.55, pan: 1
-    sleep 0.75
+    sample :elec_ping, amp: 0.4, pan: 1
+    sleep 0.25
+    sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
+    sleep 0.25
+    if one_in(2)
+      sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
+    end
+    sleep 0.25
     sample :drum_heavy_kick
-    sleep 1
+    sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
+    sleep 0.5
+    sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
+    sleep 0.25
+    sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
+    sleep 0.25
     sample :elec_hi_snare
-    sleep 1
+    sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
+    sleep 0.5
+    sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
+    sleep 0.25
+    if one_in(3)
+      sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
+    end
+    sleep 0.25
   end
 end
 
 define :left_guitar_pattern_intro do
-sleep 4
-sleep 4 * 6
+  sleep 20
+  sleep 4 * 6
 end
-  
+
+define :right_guitar_pattern_intro do
+  sleep 20
+  sleep 4 * 6
+end
 
 #################################
 #############VERSE###############
@@ -419,25 +501,46 @@ define :bass_verse do
   end
 end
 
-define :drums1_verse do  
-    16.times do
+define :drums1_verse do
+  16.times do
     sample :drum_heavy_kick
+    sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
     sleep 0.5
-    sample :elec_ping, amp: 0.55, pan: 1
+    sample :elec_ping, amp: 0.4, pan: 1
+    sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
     sleep 0.5
     sample :elec_hi_snare
+    sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
     sleep 0.25
-    sample :elec_ping, amp: 0.55, pan: 1
-    sleep 0.75
+    sample :elec_ping, amp: 0.4, pan: 1
+    sleep 0.25
+    sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
+    sleep 0.25
+    if one_in(2)
+      sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
+    end
+    sleep 0.25
     sample :drum_heavy_kick
-    sleep 1
+    sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
+    sleep 0.5
+    sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
+    sleep 0.25
+    sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
+    sleep 0.25
     sample :elec_hi_snare
-    sleep 1
+    sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
+    sleep 0.5
+    sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
+    sleep 0.25
+    if one_in(3)
+      sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
+    end
+    sleep 0.25
   end
 end
 
 define :left_guitar_pattern_verse do
-  if (verse == 1) 
+  if (verse == 1)
     sleep 4 * 8
     8.times do
       left_guitar_pattern
@@ -446,8 +549,12 @@ define :left_guitar_pattern_verse do
     16.times do
       left_guitar_pattern
     end
-  end  
+  end
   verse = verse + 1
+end
+
+define :right_guitar_pattern_verse do
+  sleep 4 * 16
 end
 
 #################################
@@ -612,19 +719,40 @@ define :vocals_chorus do
 end
 
 define :drums_chorus do
-    7.times do
+  7.times do
     sample :drum_heavy_kick
+    sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
     sleep 0.5
-    sample :elec_ping, amp: 0.55, pan: 1
+    sample :elec_ping, amp: 0.4, pan: 1
+    sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
     sleep 0.5
     sample :elec_hi_snare
+    sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
     sleep 0.25
-    sample :elec_ping, amp: 0.55, pan: 1
-    sleep 0.75
+    sample :elec_ping, amp: 0.4, pan: 1
+    sleep 0.25
+    sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
+    sleep 0.25
+    if one_in(2)
+      sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
+    end
+    sleep 0.25
     sample :drum_heavy_kick
-    sleep 1
+    sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
+    sleep 0.5
+    sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
+    sleep 0.25
+    sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
+    sleep 0.25
     sample :elec_hi_snare
-    sleep 1
+    sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
+    sleep 0.5
+    sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
+    sleep 0.25
+    if one_in(3)
+      sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
+    end
+    sleep 0.25
   end
 end
 
@@ -637,8 +765,15 @@ define :left_guitar_pattern_chorus do
   else
     sleep 4 * 7
   end  
-  verse = chorus + 1
+  chorus = chorus + 1
 end
+
+define :right_guitar_pattern_chorus do
+  7.times do
+    right_guitar_pattern
+  end
+end
+  
 
 #################################
 ######## FIRST ENDING ###########
@@ -733,35 +868,59 @@ define :vocals_chorus_first_ending do
 end
 
 define :drums_chorus_first_ending do
-    5.times do
+  5.times do
     sample :drum_heavy_kick
+    sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
     sleep 0.5
-    sample :elec_ping, amp: 0.55, pan: 1
+    sample :elec_ping, amp: 0.4, pan: 1
+    sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
     sleep 0.5
     sample :elec_hi_snare
+    sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
     sleep 0.25
-    sample :elec_ping, amp: 0.55, pan: 1
-    sleep 0.75
+    sample :elec_ping, amp: 0.4, pan: 1
+    sleep 0.25
+    sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
+    sleep 0.25
+    if one_in(2)
+      sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
+    end
+    sleep 0.25
     sample :drum_heavy_kick
-    sleep 1
+    sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
+    sleep 0.5
+    sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
+    sleep 0.25
+    sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
+    sleep 0.25
     sample :elec_hi_snare
-    sleep 1
+    sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
+    sleep 0.5
+    sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
+    sleep 0.25
+    if one_in(3)
+      sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
+    end
+    sleep 0.25
   end
 end
 
 define :left_guitar_pattern_chorus_first_ending do
   sleep	4 * 1
-  3.times do
+  4.times do
     left_guitar_pattern
   end
 end
 
+define :right_guitar_pattern_chorus_first_ending do
+  sleep	4 * 5
+end
 
-  #################################
-  ######## SECOND ENDING ##########
-  #################################
-  
-  define :chords_chorus_second_ending do
+#################################
+######## SECOND ENDING ##########
+#################################
+
+define :chords_chorus_second_ending do
   play :g5, release: 0.75, amp: 0.85
   play :e5, release: 0.75, amp: 0.85
   play :cs5, release: 0.75, amp: 0.85
@@ -777,44 +936,44 @@ end
   play :a4, release: 0.65, amp: 0.85
   play :e4, elease: 0.65, amp: 0.85
   sleep  1
-    play :cs5, attack: 0.25, release: 3.5, amp: 0.5
-    play :b4, attack: 0.25, release: 3.5, amp: 0.5
-    play :gs4, attack: 0.25, release: 3.5, amp: 0.5
-    play :e4, attack: 0.25, release: 3.5, amp: 0.5
-    sleep 2.5
-    play :gs4, attack: 0.1, release: 0.75, amp: 0.5
-    play :e4, attack: 0.1, release: 0.75, amp: 0.5
-    play :cs4, attack: 0.1, release: 0.75, amp: 0.5
-    sleep 0.5
-    play :fs4, attack: 0.5, release: 6, amp: 0.5
-    play :e4, attack: 0.5, release: 6, amp: 0.5
-    play :cs4, attack: 0.5, release: 6, amp: 0.5
-    play :as3, attack: 0.5, release: 6, amp: 0.5
-    sleep 1
-  end
-  
-  define :bass_chorus_second_ending do
-    play :a1, release: 0.5, amp: 1
-    sleep 1.5
-    play :fs2, release: 0.5, amp: 1
-    sleep 1.5
-    play :b1, release: 0.5, amp: 1
-    sleep 1.5
-    play :cs2, release: 0.5, amp: 1
-    sleep 0.5
-    play :cs2, release: 0.25, amp: 1
-    sleep 0.25
-    play :b1, release: 0.25, amp: 1
-    sleep 0.5
-    play :b1, release: 0.25, amp: 1
-    sleep 0.25
-    play :cs1, release: 0.25, amp: 1
-    sleep 0.5
-    play :e1, release: 0.25, amp: 1
-    sleep 0.5
-    play :fs1, release: 2.5
-    sleep 1
-  end
+  play :cs5, attack: 0.25, release: 3.5, amp: 0.5
+  play :b4, attack: 0.25, release: 3.5, amp: 0.5
+  play :gs4, attack: 0.25, release: 3.5, amp: 0.5
+  play :e4, attack: 0.25, release: 3.5, amp: 0.5
+  sleep 2.5
+  play :gs4, attack: 0.1, release: 0.75, amp: 0.5
+  play :e4, attack: 0.1, release: 0.75, amp: 0.5
+  play :cs4, attack: 0.1, release: 0.75, amp: 0.5
+  sleep 0.5
+  play :fs4, attack: 0.5, release: 6, amp: 0.5
+  play :e4, attack: 0.5, release: 6, amp: 0.5
+  play :cs4, attack: 0.5, release: 6, amp: 0.5
+  play :as3, attack: 0.5, release: 6, amp: 0.5
+  sleep 1
+end
+
+define :bass_chorus_second_ending do
+  play :a1, release: 0.5, amp: 1
+  sleep 1.5
+  play :fs2, release: 0.5, amp: 1
+  sleep 1.5
+  play :b1, release: 0.5, amp: 1
+  sleep 1.5
+  play :cs2, release: 0.5, amp: 1
+  sleep 0.5
+  play :cs2, release: 0.25, amp: 1
+  sleep 0.25
+  play :b1, release: 0.25, amp: 1
+  sleep 0.5
+  play :b1, release: 0.25, amp: 1
+  sleep 0.25
+  play :cs1, release: 0.25, amp: 1
+  sleep 0.5
+  play :e1, release: 0.25, amp: 1
+  sleep 0.5
+  play :fs1, release: 2.5
+  sleep 1
+end
   
 define :vocals_chorus_second_ending do
   sleep 0.5
@@ -833,23 +992,48 @@ define :vocals_chorus_second_ending do
 end
 
 define :drums_chorus_second_ending do
-    2.times do
+  2.times do
     sample :drum_heavy_kick
+    sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
     sleep 0.5
-    sample :elec_ping, amp: 0.55, pan: 1
+    sample :elec_ping, amp: 0.4, pan: 1
+    sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
     sleep 0.5
     sample :elec_hi_snare
+    sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
     sleep 0.25
-    sample :elec_ping, amp: 0.55, pan: 1
-    sleep 0.75
+    sample :elec_ping, amp: 0.4, pan: 1
+    sleep 0.25
+    sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
+    sleep 0.25
+    if one_in(2)
+      sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
+    end
+    sleep 0.25
     sample :drum_heavy_kick
-    sleep 1
+    sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
+    sleep 0.5
+    sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
+    sleep 0.25
+    sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
+    sleep 0.25
     sample :elec_hi_snare
-    sleep 1
+    sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
+    sleep 0.5
+    sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
+    sleep 0.25
+    if one_in(3)
+      sample :drum_cymbal_closed, amp: 0.20, pan: -0.15
+    end
+    sleep 0.25
   end
 end
 
 define :left_guitar_pattern_chorus_second_ending do
+  sleep	4 * 4
+end
+
+define :right_guitar_pattern_chorus_second_ending do
   sleep	4 * 4
 end
 
@@ -943,9 +1127,7 @@ define :bass_bridge do
   play :e1, release: 0.25
   sleep 0.75
   play :a1, release: 2
-  sleep 2
-  play :a1, release: 0.5
-  sleep 0.5
+  sleep 2.5
   play :a1, release: 1.5
   sleep 1.5
   play :fs1, release: 0.3
@@ -959,9 +1141,7 @@ define :bass_bridge do
   play :b1, release: 0.25
   sleep 0.75
   play :cs2, release: 2.25
-  sleep 2.25
-  play :cs2, release: 0.25
-  sleep 0.25
+  sleep 2.5
   play :cs2, release: 0.5
   sleep 0.5
   play :ds2, release: 0.55
@@ -971,9 +1151,7 @@ define :bass_bridge do
   play :cs2, release: 0.55
   sleep 0.5
   play :b1, release: 1.75
-  sleep 1.75
-  play :b1, release: 0.25
-  sleep 0.25
+  sleep 2
   play :b1, release: 1
   sleep 1
   play :cs2, release: 0.55
@@ -981,17 +1159,11 @@ define :bass_bridge do
   play :b1, release: 0.55
   sleep 0.5
   play :as1, release: 1.75
-  sleep 1.75
-  play :as1, release: 0.25
-  sleep 0.25
+  sleep 2
   play :as1, release: 1.75
-  sleep 1.75
-  play :as1, release: 0.25
-  sleep 0.25
+  sleep 2
   play :a1, release: 1.75
-  sleep 1.75
-  play :a1, release: 0.25
-  sleep 0.25
+  sleep 2
   play :b1, release: 1
   sleep 1
   play :a1, release: 1
@@ -1085,7 +1257,6 @@ define :vocals_bridge do
   sleep 1
   play :b4, release: 1.25, pan: 1, amp: 0.5
   sleep 1
-
   play :e4, release: 1
   play :gs4, release: 4.5, pan: 1, amp: 0.5
   sleep 0.75
@@ -1113,7 +1284,7 @@ end
 
 
 define :drums_bridge do
-    10.times do
+  10.times do
     sample :drum_heavy_kick
     sleep 1
     sample :elec_hi_snare
@@ -1126,7 +1297,11 @@ define :drums_bridge do
 end
 
 define :left_guitar_pattern_bridge do
-  sleep 4 * 10
+  sleep 4 * 8
+end
+
+define :right_guitar_pattern_bridge do
+  sleep 4 * 8
 end
 
 
@@ -1193,6 +1368,25 @@ in_thread do
 end
 
 in_thread do
+  use_synth :tb303
+  right_guitar_pattern_intro
+  #----#
+  right_guitar_pattern_verse
+  right_guitar_pattern_chorus
+  right_guitar_pattern_chorus_first_ending
+  #----#
+  right_guitar_pattern_verse
+  right_guitar_pattern_chorus
+  right_guitar_pattern_chorus_second_ending
+  right_guitar_pattern_bridge
+  #----#
+  right_guitar_pattern_verse
+  right_guitar_pattern_chorus
+#  right_guitar_pattern_coda
+# right_guitar_pattern_outro_vamp
+end
+
+in_thread do
   use_synth :saw
   chords_intro
   #----#
@@ -1224,4 +1418,8 @@ in_thread do
   drums_chorus
 #drums_coda
 #drums_outro_vamp
+end
+
+in_thread do
+  sfx_intro
 end
