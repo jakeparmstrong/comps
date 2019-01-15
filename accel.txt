@@ -1,3 +1,6 @@
+#Exploring accelerando in sp
+#Optional OSC messages to send to other devices
+#(I used it to light a Blinkt hat)
 
 use_osc "localhost", 4580
 centre = 0
@@ -21,7 +24,6 @@ define :bass do
   play centre + 56
   sleep unit * 3
 end
-#hey change centre
 
 live_loop :pattern do
   pitch =  centre + 92

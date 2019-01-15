@@ -101,12 +101,12 @@ define :sfx_intro do
 end
 
 define :vocals_intro do
-  sleep 20
+#  sleep 20
   sleep 6 * 4
 end
 
 define :chords_intro do
-  sleep 20
+#  sleep 20
   play :Cs6
   play :gs5
   play :e5
@@ -145,7 +145,7 @@ define :chords_intro do
 end
 
 define :bass_intro do
-  sleep 20
+#  sleep 20
   play :Cs2
   play :Cs3
   sleep 0.75
@@ -182,7 +182,7 @@ define :bass_intro do
 end
 
 define :drums_intro do
-  sleep 20
+#  sleep 20
   sample :drum_bass_hard, sustain_level: 2
   sleep 0.75
   sample :drum_bass_hard, sustain_level: 2
@@ -238,12 +238,12 @@ define :drums_intro do
 end
 
 define :left_guitar_pattern_intro do
-  sleep 20
+#  sleep 20
   sleep 4 * 6
 end
 
 define :right_guitar_pattern_intro do
-  sleep 20
+#  sleep 20
   sleep 4 * 6
 end
 
@@ -1420,6 +1420,6 @@ in_thread do
 #drums_outro_vamp
 end
 
-in_thread do
-  sfx_intro
-end
+#in_thread do
+#  sfx_intro
+#end
