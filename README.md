@@ -1,7 +1,8 @@
 # comps
-Some more Sonic Pi pieces, including most of Michael Jackson's Thriller.
+Some more Sonic Pi pieces, including most of Michael Jackson's Thriller (https://youtu.be/7eqSoYsBm3c).
 
 # Playing Thriller
+
 
 To play most Sonic Pi files, a user typically has to add code directly into the program's code editor. I found that, once my arrangement of Thriller got beyond a certain number of lines of code, it would no longer play consistently (it tended to fail halfway through the song).
 
